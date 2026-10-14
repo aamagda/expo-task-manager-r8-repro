@@ -2,7 +2,7 @@
 
 ## Minimal reproducible example
 
-TODO: Insert this repository's public GitHub URL after publishing.
+https://github.com/aamagda/expo-task-manager-r8-repro
 
 ## Steps to reproduce
 
