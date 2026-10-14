@@ -1,0 +1,27 @@
+{
+  "name": "expo-task-manager-r8-repro",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "packageManager": "pnpm@11.24.0",
+  "scripts": {
+    "prebuild": "expo prebuild --platform android --clean --no-install",
+    "repro": "node scripts/build.js",
+    "repro:fixed": "node scripts/build.js --fix",
+    "inspect:jar": "node scripts/inspect-jar.js"
+  },
+  "dependencies": {
+    "expo": "57.0.9",
+    "expo-task-manager": "57.0.7",
+    "react": "19.2.3",
+    "react-native": "0.86.2"
+  },
+  "expo": {
+    "autolinking": {
+      "buildFromSource": [
+        "expo-task-manager",
+        "unimodules-app-loader"
+      ]
+    }
+  }
+}

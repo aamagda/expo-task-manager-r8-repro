@@ -1,0 +1,9 @@
+{
+  "expo": {
+    "name": "TaskManager R8 reproduction",
+    "slug": "expo-task-manager-r8-repro",
+    "version": "1.0.0",
+    "android": {"package": "com.aamagda.taskmanagerr8repro"},
+    "plugins": ["./plugins/withReleaseTest"]
+  }
+}
