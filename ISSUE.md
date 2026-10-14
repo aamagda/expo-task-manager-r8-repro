@@ -11,8 +11,8 @@ instrumentation tests with `expo-task-manager@57.0.7` built from source.
 
 This repository reduces the setup to a small Expo app with a local config plugin
 that enables release test minification and generates a trivial Android test.
-It does not include Detox. Standalone R8 validation is still pending; see
-[VALIDATION.md](./VALIDATION.md) before submitting this report.
+It does not include Detox. Both commands have been manually verified locally:
+`repro` reproduces the R8 error, and `repro:fixed` succeeds.
 
 On macOS with a case-insensitive filesystem and Android SDK/JDK installed:
 
@@ -24,7 +24,7 @@ corepack pnpm repro
 
 Expected: `:app:minifyReleaseAndroidTestWithR8` succeeds.
 
-Observed in the original application:
+Actual (also manually reproduced in this minimal project):
 
 ```text
 > Task :app:minifyReleaseAndroidTestWithR8 FAILED
@@ -55,7 +55,8 @@ descriptor contains `taskmanager`.
 
 Run `corepack pnpm repro:fixed` to test this namespace override. The command cleans
 the affected outputs first. The override is off for the original reproduction.
-The full fixed build still needs confirmation.
+Manually verified locally: this command succeeds, while `repro` reproduces the
+error. This confirms the fix for the targeted R8 build task.
 
 ## Environment
 

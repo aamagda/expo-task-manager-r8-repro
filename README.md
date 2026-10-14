@@ -35,7 +35,7 @@ ensures Expo compiles `expo-task-manager` and its required `unimodules-app-loade
 instead of using their prebuilt artifacts.
 
 The build script cleans app and task-manager outputs first, then runs the R8 task.
-Expected behavior: the task succeeds. The original project's observed failure is:
+Expected behavior: the task succeeds. The failure reproduced by this project is:
 
 ```text
 > Task :app:minifyReleaseAndroidTestWithR8 FAILED
@@ -87,9 +87,12 @@ not carry that project's unrelated JobInfo patch.
 
 ## Validation
 
-Standalone build validation is pending. The error above was captured in the
-original application; do not treat it as a successful reproduction in this
-reduced project until the build has been run. See `VALIDATION.md` for local results.
+Manually confirmed locally by the reporter:
+
+- `corepack pnpm repro` reproduces the R8 error above.
+- `corepack pnpm repro:fixed` succeeds with the namespace override.
+
+See [VALIDATION.md](./VALIDATION.md) for validation details.
 
 Before filing, collect diagnostics from this project:
 
